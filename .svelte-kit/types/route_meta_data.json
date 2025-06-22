@@ -1,0 +1,18 @@
+{
+	"/": [
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/contact": [
+		"src/routes/+layout.js"
+	],
+	"/nexo_project": [
+		"src/routes/+layout.js"
+	],
+	"/projects": [
+		"src/routes/+layout.js"
+	],
+	"/skills": [
+		"src/routes/+layout.js"
+	]
+}
