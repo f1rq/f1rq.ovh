@@ -9,7 +9,7 @@
     export let link = "";
   </script>
   
-  <a href="{base}/{link}">
+  <a href="{link}">
     <div class="rounded-3xl shadow-3xl relative overflow-hidden group card border-[1px]">
       <img
         src={image}

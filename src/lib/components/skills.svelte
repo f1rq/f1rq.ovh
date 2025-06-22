@@ -9,6 +9,7 @@
     import JS_Logo from "$lib/img/Javascript_Logo.svg";
     import Mysql_Logo from "$lib/img/Mysql_Logo.svg";
     import discordpy_logo from "$lib/img/discordpy_logo.png";
+    import ArduinoLogo from "$lib/img/Arduino_Logo.svg";
 </script>
 
 <div class="h-screen flex flex-col items-center justify-center">
@@ -114,6 +115,17 @@
             </MagicCard>
         </a>
 
+        <a href="https://www.arduino.cc/" target="_blank">
+            <MagicCard
+                class="cursor-pointer shadow-2xl whitespace-nowrap group hover:border-[#19989e] transition-all duration-300"
+                gradientColor="#0c4e52"
+                gradientSize={100}>
+                <div
+                class="transition-all duration-500 flex gap-1.5 justify-center items-center">
+                <img src={ArduinoLogo} alt="arduino_logo" class="size-12" />
+                </div>
+            </MagicCard>
+        </a>
         
     </div>
 </BlurFade>

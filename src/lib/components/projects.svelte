@@ -1,6 +1,9 @@
 <script>
     import BlurFade from "./BlurFade.svelte";
     import ProjectCard from "./ProjectCard.svelte";
+    import nexomockup from "$lib/img/nexo_mockup.png";
+    import strayvoidmockup from "$lib/img/strayvoid_mockup.png";
+    import lifemapmockup from "$lib/img/lifemap_mockup.png";
 </script>
 
 <div class="min-h-screen flex flex-col items-center justify-center py-8 pb-[80px] md:pb-8 w-full">
@@ -14,18 +17,20 @@
                 <ProjectCard
                     title="Nexo"
                     desc="My own personal bot for Discord, written in Python using the discord.py library."
-                    image="/src/lib/img/nexo_mockup.png"
+                    image={nexomockup}
                     link="nexo_project"
                 />
                 <ProjectCard 
                     title="Strayvoid"
                     desc="This is my first ever game. 2d pixelart platformer. Learning godot and generally game-dev. Maybe when i finish it it will be on steam but only maybe."
-                    image="/src/lib/img/strayvoid_mockup.png"
+                    image={strayvoidmockup}
+                    link="https://github.com/f1rq/Strayvoid"
                 />
                 <ProjectCard
                     title="LifeMap"
-                    desc="LifeMap is a personal life tracker that visually organizes important events, goals, and memories in a timeline and map format. It helps users reflect on their past, document key milestones, and plan for the future in a structured and interactive way."
-                    image="/src/lib/img/lifemap_mockup.png"
+                    desc="LifeMap is a personal life tracker that visually organizes important events, goals, and memories in a timeline and map format."
+                    image={lifemapmockup}
+                    link="https://github.com/f1rq/LifeMap"
                 />
             </div>
         </div>

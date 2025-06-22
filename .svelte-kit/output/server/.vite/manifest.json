@@ -1,0 +1,246 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "name": "internal",
+    "src": ".svelte-kit/generated/server/internal.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js",
+      "_paths.js"
+    ]
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js",
+    "name": "exports"
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "name": "index"
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js",
+    "name": "index",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "name": "internal",
+    "imports": [
+      "_index.js",
+      "_paths.js"
+    ]
+  },
+  "_navigations.Bly-bzoP.css": {
+    "file": "_app/immutable/assets/navigations.Bly-bzoP.css",
+    "src": "_navigations.Bly-bzoP.css"
+  },
+  "_navigations.js": {
+    "file": "chunks/navigations.js",
+    "name": "navigations",
+    "imports": [
+      "_index.js",
+      "_index2.js",
+      "_paths.js"
+    ],
+    "css": [
+      "_app/immutable/assets/navigations.Bly-bzoP.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/fa-brands-400.D_cYUPeE.woff2",
+      "_app/immutable/assets/fa-brands-400.D1LuMI3I.ttf",
+      "_app/immutable/assets/fa-regular-400.BjRzuEpd.woff2",
+      "_app/immutable/assets/fa-regular-400.DZaxPHgR.ttf",
+      "_app/immutable/assets/fa-solid-900.CTAAxXor.woff2",
+      "_app/immutable/assets/fa-solid-900.D0aA9rwL.ttf",
+      "_app/immutable/assets/fa-v4compatibility.C9RhG_FT.woff2",
+      "_app/immutable/assets/fa-v4compatibility.CCth-dXg.ttf"
+    ]
+  },
+  "_paths.js": {
+    "file": "chunks/paths.js",
+    "name": "paths"
+  },
+  "_use-motion-template.js": {
+    "file": "chunks/use-motion-template.js",
+    "name": "use-motion-template",
+    "imports": [
+      "_navigations.js"
+    ]
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
+    "file": "_app/immutable/assets/fa-brands-400.D1LuMI3I.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2": {
+    "file": "_app/immutable/assets/fa-brands-400.D_cYUPeE.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
+    "file": "_app/immutable/assets/fa-regular-400.DZaxPHgR.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
+    "file": "_app/immutable/assets/fa-regular-400.BjRzuEpd.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
+    "file": "_app/immutable/assets/fa-solid-900.D0aA9rwL.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
+    "file": "_app/immutable/assets/fa-solid-900.CTAAxXor.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf": {
+    "file": "_app/immutable/assets/fa-v4compatibility.CCth-dXg.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2": {
+    "file": "_app/immutable/assets/fa-v4compatibility.C9RhG_FT.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "name": "entries/fallbacks/error.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_exports.js",
+      "_index2.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "name": "index",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_paths.js",
+      "_exports.js",
+      "_index2.js",
+      "_internal.js"
+    ]
+  },
+  "src/lib/img/Javascript_Logo.svg": {
+    "file": "_app/immutable/assets/Javascript_Logo.DpxT93Ny.svg",
+    "src": "src/lib/img/Javascript_Logo.svg"
+  },
+  "src/lib/img/discordpy_logo.png": {
+    "file": "_app/immutable/assets/discordpy_logo.B5e03DV7.png",
+    "src": "src/lib/img/discordpy_logo.png"
+  },
+  "src/lib/img/lifemap_mockup.png": {
+    "file": "_app/immutable/assets/lifemap_mockup.CSwFbW8e.png",
+    "src": "src/lib/img/lifemap_mockup.png"
+  },
+  "src/lib/img/nexo_mockup.png": {
+    "file": "_app/immutable/assets/nexo_mockup.BQrQL36w.png",
+    "src": "src/lib/img/nexo_mockup.png"
+  },
+  "src/lib/img/nexo_screenshot.png": {
+    "file": "_app/immutable/assets/nexo_screenshot.Bcm4Ri0h.png",
+    "src": "src/lib/img/nexo_screenshot.png"
+  },
+  "src/lib/img/strayvoid_mockup.png": {
+    "file": "_app/immutable/assets/strayvoid_mockup.qYt_PjMJ.png",
+    "src": "src/lib/img/strayvoid_mockup.png"
+  },
+  "src/routes/+layout.js": {
+    "file": "entries/pages/_layout.js",
+    "name": "entries/pages/_layout",
+    "src": "src/routes/+layout.js",
+    "isEntry": true
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "name": "entries/pages/_layout.svelte",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "css": [
+      "_app/immutable/assets/_layout.bzRjB_Pg.css"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "name": "entries/pages/_page.svelte",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_navigations.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.CSDlrlWH.css"
+    ]
+  },
+  "src/routes/contact/+page.svelte": {
+    "file": "entries/pages/contact/_page.svelte.js",
+    "name": "entries/pages/contact/_page.svelte",
+    "src": "src/routes/contact/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_navigations.js",
+      "_index.js",
+      "_use-motion-template.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.DxWaHxfu.css"
+    ]
+  },
+  "src/routes/nexo_project/+page.svelte": {
+    "file": "entries/pages/nexo_project/_page.svelte.js",
+    "name": "entries/pages/nexo_project/_page.svelte",
+    "src": "src/routes/nexo_project/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_navigations.js",
+      "_index.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.B7UNwtVr.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/nexo_screenshot.Bcm4Ri0h.png"
+    ]
+  },
+  "src/routes/projects/+page.svelte": {
+    "file": "entries/pages/projects/_page.svelte.js",
+    "name": "entries/pages/projects/_page.svelte",
+    "src": "src/routes/projects/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_navigations.js",
+      "_index.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.BbbLU6rH.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/nexo_mockup.BQrQL36w.png",
+      "_app/immutable/assets/strayvoid_mockup.qYt_PjMJ.png",
+      "_app/immutable/assets/lifemap_mockup.CSwFbW8e.png"
+    ]
+  },
+  "src/routes/skills/+page.svelte": {
+    "file": "entries/pages/skills/_page.svelte.js",
+    "name": "entries/pages/skills/_page.svelte",
+    "src": "src/routes/skills/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_navigations.js",
+      "_index.js",
+      "_use-motion-template.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.IBuK5Yat.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/Javascript_Logo.DpxT93Ny.svg",
+      "_app/immutable/assets/discordpy_logo.B5e03DV7.png"
+    ]
+  }
+}
