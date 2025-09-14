@@ -1,15 +1,11 @@
-import { H as HYDRATION_ERROR, g as get_next_sibling, d as define_property, s as set_active_reaction, a as set_active_effect, i as is_array, b as active_effect, c as active_reaction, e as init_operations, f as get_first_child, h as HYDRATION_START, j as HYDRATION_END, k as hydration_failed, l as clear_text_content, m as array_from, n as component_root, o as create_text, p as branch, q as push, r as component_context, t as pop, u as set, L as LEGACY_PROPS, v as get, w as flushSync, x as mutable_source, y as render, z as push$1, A as setContext, C as pop$1 } from "./index.js";
+import { H as HYDRATION_ERROR, g as get_next_sibling, d as define_property, s as set_active_reaction, a as set_active_effect, i as is_array, b as active_effect, c as active_reaction, e as init_operations, f as get_first_child, C as COMMENT_NODE, h as HYDRATION_START, j as HYDRATION_END, k as hydration_failed, l as clear_text_content, m as array_from, n as component_root, o as create_text, p as branch, q as push, r as component_context, t as pop, u as set, L as LEGACY_PROPS, v as get, w as flushSync, x as mutable_source, y as render, z as push$1, A as setContext, B as pop$1 } from "./index2.js";
 import "clsx";
-import "./paths.js";
+import "./environment.js";
 let public_env = {};
-let safe_public_env = {};
 function set_private_env(environment) {
 }
 function set_public_env(environment) {
   public_env = environment;
-}
-function set_safe_public_env(environment) {
-  safe_public_env = environment;
 }
 function hydration_mismatch(location) {
   {
@@ -40,6 +36,7 @@ function is_passive_event(name) {
 }
 const all_registered_events = /* @__PURE__ */ new Set();
 const root_event_handles = /* @__PURE__ */ new Set();
+let last_propagated_event = null;
 function handle_event_propagation(event) {
   var handler_element = this;
   var owner_document = (
@@ -52,8 +49,9 @@ function handle_event_propagation(event) {
     /** @type {null | Element} */
     path[0] || event.target
   );
+  last_propagated_event = event;
   var path_idx = 0;
-  var handled_at = event.__root;
+  var handled_at = last_propagated_event === event && event.__root;
   if (handled_at) {
     var at_idx = path.indexOf(handled_at);
     if (at_idx !== -1 && (handler_element === document || handler_element === /** @type {any} */
@@ -152,7 +150,7 @@ function hydrate(component, options2) {
       /** @type {TemplateNode} */
       get_first_child(target)
     );
-    while (anchor && (anchor.nodeType !== 8 || /** @type {Comment} */
+    while (anchor && (anchor.nodeType !== COMMENT_NODE || /** @type {Comment} */
     anchor.data !== HYDRATION_START)) {
       anchor = /** @type {TemplateNode} */
       get_next_sibling(anchor);
@@ -167,7 +165,7 @@ function hydrate(component, options2) {
     );
     hydrate_next();
     const instance = _mount(component, { ...options2, anchor });
-    if (hydrate_node === null || hydrate_node.nodeType !== 8 || /** @type {Comment} */
+    if (hydrate_node === null || hydrate_node.nodeType !== COMMENT_NODE || /** @type {Comment} */
     hydrate_node.data !== HYDRATION_END) {
       hydration_mismatch();
       throw HYDRATION_ERROR;
@@ -178,16 +176,19 @@ function hydrate(component, options2) {
       instance
     );
   } catch (error) {
-    if (error === HYDRATION_ERROR) {
-      if (options2.recover === false) {
-        hydration_failed();
-      }
-      init_operations();
-      clear_text_content(target);
-      set_hydrating(false);
-      return mount(component, options2);
+    if (error instanceof Error && error.message.split("\n").some((line) => line.startsWith("https://svelte.dev/e/"))) {
+      throw error;
     }
-    throw error;
+    if (error !== HYDRATION_ERROR) {
+      console.warn("Failed to hydrate: ", error);
+    }
+    if (options2.recover === false) {
+      hydration_failed();
+    }
+    init_operations();
+    clear_text_content(target);
+    set_hydrating(false);
+    return mount(component, options2);
   } finally {
     set_hydrating(was_hydrating);
     set_hydrate_node(previous_hydrate_node);
@@ -301,7 +302,7 @@ class Svelte4Component {
   constructor(options2) {
     var sources = /* @__PURE__ */ new Map();
     var add_source = (key, value) => {
-      var s = mutable_source(value);
+      var s = mutable_source(value, false, false);
       sources.set(key, s);
       return s;
     };
@@ -398,12 +399,6 @@ function asClassComponent(component) {
   component_constructor.render = _render;
   return component_constructor;
 }
-let prerendering = false;
-function set_building() {
-}
-function set_prerendering() {
-  prerendering = true;
-}
 function Root($$payload, $$props) {
   push$1();
   let {
@@ -423,32 +418,33 @@ function Root($$payload, $$props) {
   }
   const Pyramid_1 = constructors[1];
   if (constructors[1]) {
-    $$payload.out += "<!--[-->";
+    $$payload.out.push("<!--[-->");
     const Pyramid_0 = constructors[0];
-    $$payload.out += `<!---->`;
+    $$payload.out.push(`<!---->`);
     Pyramid_0($$payload, {
       data: data_0,
       form,
+      params: page.params,
       children: ($$payload2) => {
-        $$payload2.out += `<!---->`;
-        Pyramid_1($$payload2, { data: data_1, form });
-        $$payload2.out += `<!---->`;
+        $$payload2.out.push(`<!---->`);
+        Pyramid_1($$payload2, { data: data_1, form, params: page.params });
+        $$payload2.out.push(`<!---->`);
       },
       $$slots: { default: true }
     });
-    $$payload.out += `<!---->`;
+    $$payload.out.push(`<!---->`);
   } else {
-    $$payload.out += "<!--[!-->";
+    $$payload.out.push("<!--[!-->");
     const Pyramid_0 = constructors[0];
-    $$payload.out += `<!---->`;
-    Pyramid_0($$payload, { data: data_0, form });
-    $$payload.out += `<!---->`;
+    $$payload.out.push(`<!---->`);
+    Pyramid_0($$payload, { data: data_0, form, params: page.params });
+    $$payload.out.push(`<!---->`);
   }
-  $$payload.out += `<!--]--> `;
+  $$payload.out.push(`<!--]--> `);
   {
-    $$payload.out += "<!--[!-->";
+    $$payload.out.push("<!--[!-->");
   }
-  $$payload.out += `<!--]-->`;
+  $$payload.out.push(`<!--]-->`);
   pop$1();
 }
 const root = asClassComponent(Root);
@@ -456,6 +452,7 @@ const options = {
   app_template_contains_nonce: false,
   csp: { "mode": "auto", "directives": { "upgrade-insecure-requests": false, "block-all-mixed-content": false }, "reportOnly": { "upgrade-insecure-requests": false, "block-all-mixed-content": false } },
   csrf_check_origin: true,
+  csrf_trusted_origins: [],
   embedded: false,
   env_public_prefix: "PUBLIC_",
   env_private_prefix: "",
@@ -465,6 +462,7 @@ const options = {
   preload_strategy: "modulepreload",
   root,
   service_worker: false,
+  service_worker_options: void 0,
   templates: {
     app: ({ head, body, assets, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets + '/favicon.png" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + `
 	</head>
@@ -541,12 +539,13 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "s9f45x"
+  version_hash: "1pvpncq"
 };
 async function get_hooks() {
   let handle;
   let handleFetch;
   let handleError;
+  let handleValidationError;
   let init;
   let reroute;
   let transport;
@@ -554,23 +553,19 @@ async function get_hooks() {
     handle,
     handleFetch,
     handleError,
+    handleValidationError,
     init,
     reroute,
     transport
   };
 }
 export {
-  set_private_env as a,
-  prerendering as b,
-  set_public_env as c,
-  set_safe_public_env as d,
-  set_read_implementation as e,
-  set_building as f,
+  set_public_env as a,
+  set_read_implementation as b,
+  set_manifest as c,
   get_hooks as g,
-  set_manifest as h,
-  set_prerendering as i,
   options as o,
   public_env as p,
   read_implementation as r,
-  safe_public_env as s
+  set_private_env as s
 };

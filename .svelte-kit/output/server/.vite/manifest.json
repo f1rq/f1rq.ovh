@@ -6,46 +6,53 @@
     "isEntry": true,
     "imports": [
       "_internal.js",
-      "_paths.js"
+      "_environment.js"
     ]
+  },
+  "_environment.js": {
+    "file": "chunks/environment.js",
+    "name": "environment"
   },
   "_exports.js": {
     "file": "chunks/exports.js",
     "name": "exports"
   },
+  "_false.js": {
+    "file": "chunks/false.js",
+    "name": "false"
+  },
   "_index.js": {
     "file": "chunks/index.js",
-    "name": "index"
+    "name": "index",
+    "imports": [
+      "_index2.js"
+    ]
   },
   "_index2.js": {
     "file": "chunks/index2.js",
     "name": "index",
     "imports": [
-      "_index.js"
+      "_false.js"
     ]
   },
   "_internal.js": {
     "file": "chunks/internal.js",
     "name": "internal",
     "imports": [
-      "_index.js",
-      "_paths.js"
+      "_index2.js",
+      "_environment.js"
     ]
-  },
-  "_navigations.Bly-bzoP.css": {
-    "file": "_app/immutable/assets/navigations.Bly-bzoP.css",
-    "src": "_navigations.Bly-bzoP.css"
   },
   "_navigations.js": {
     "file": "chunks/navigations.js",
     "name": "navigations",
     "imports": [
-      "_index.js",
       "_index2.js",
-      "_paths.js"
+      "_index.js",
+      "_runtime.js"
     ],
     "css": [
-      "_app/immutable/assets/navigations.Bly-bzoP.css"
+      "_app/immutable/assets/navigations.vkwjTnL5.css"
     ],
     "assets": [
       "_app/immutable/assets/fa-brands-400.D_cYUPeE.woff2",
@@ -58,9 +65,23 @@
       "_app/immutable/assets/fa-v4compatibility.CCth-dXg.ttf"
     ]
   },
-  "_paths.js": {
-    "file": "chunks/paths.js",
-    "name": "paths"
+  "_navigations.vkwjTnL5.css": {
+    "file": "_app/immutable/assets/navigations.vkwjTnL5.css",
+    "src": "_navigations.vkwjTnL5.css"
+  },
+  "_runtime.js": {
+    "file": "chunks/runtime.js",
+    "name": "runtime",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "_shared.js": {
+    "file": "chunks/shared.js",
+    "name": "shared",
+    "imports": [
+      "_utils.js"
+    ]
   },
   "_use-motion-template.js": {
     "file": "chunks/use-motion-template.js",
@@ -68,6 +89,10 @@
     "imports": [
       "_navigations.js"
     ]
+  },
+  "_utils.js": {
+    "file": "chunks/utils.js",
+    "name": "utils"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
     "file": "_app/immutable/assets/fa-brands-400.D1LuMI3I.ttf",
@@ -101,15 +126,27 @@
     "file": "_app/immutable/assets/fa-v4compatibility.C9RhG_FT.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
+  "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js": {
+    "file": "remote-entry.js",
+    "name": "remote-entry",
+    "src": "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js",
+    "isEntry": true,
+    "imports": [
+      "_shared.js",
+      "_false.js",
+      "_environment.js"
+    ]
+  },
   "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte": {
     "file": "entries/fallbacks/error.svelte.js",
     "name": "entries/fallbacks/error.svelte",
     "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_index2.js",
       "_exports.js",
-      "_index2.js"
+      "_utils.js",
+      "_index.js"
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
@@ -118,11 +155,13 @@
     "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
     "isEntry": true,
     "imports": [
-      "_index.js",
-      "_paths.js",
+      "_false.js",
+      "_environment.js",
       "_exports.js",
-      "_index2.js",
-      "_internal.js"
+      "_utils.js",
+      "_index.js",
+      "_internal.js",
+      "_shared.js"
     ]
   },
   "src/lib/img/Javascript_Logo.svg": {
@@ -149,6 +188,18 @@
     "file": "_app/immutable/assets/strayvoid_mockup.qYt_PjMJ.png",
     "src": "src/lib/img/strayvoid_mockup.png"
   },
+  "src/lib/locales/en.json": {
+    "file": "chunks/en.js",
+    "name": "en",
+    "src": "src/lib/locales/en.json",
+    "isDynamicEntry": true
+  },
+  "src/lib/locales/pl.json": {
+    "file": "chunks/pl.js",
+    "name": "pl",
+    "src": "src/lib/locales/pl.json",
+    "isDynamicEntry": true
+  },
   "src/routes/+layout.js": {
     "file": "entries/pages/_layout.js",
     "name": "entries/pages/_layout",
@@ -160,8 +211,16 @@
     "name": "entries/pages/_layout.svelte",
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_runtime.js"
+    ],
+    "dynamicImports": [
+      "src/lib/locales/en.json",
+      "src/lib/locales/pl.json"
+    ],
     "css": [
-      "_app/immutable/assets/_layout.bzRjB_Pg.css"
+      "_app/immutable/assets/_layout.C-7qJ7vh.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -170,11 +229,12 @@
     "src": "src/routes/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
-      "_navigations.js"
+      "_index2.js",
+      "_navigations.js",
+      "_runtime.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.CSDlrlWH.css"
+      "_app/immutable/assets/_page.rl6Lb2N4.css"
     ]
   },
   "src/routes/contact/+page.svelte": {
@@ -184,11 +244,12 @@
     "isEntry": true,
     "imports": [
       "_navigations.js",
-      "_index.js",
-      "_use-motion-template.js"
+      "_index2.js",
+      "_use-motion-template.js",
+      "_runtime.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.DxWaHxfu.css"
+      "_app/immutable/assets/_page.ClkIihRe.css"
     ]
   },
   "src/routes/nexo_project/+page.svelte": {
@@ -198,10 +259,11 @@
     "isEntry": true,
     "imports": [
       "_navigations.js",
-      "_index.js"
+      "_index2.js",
+      "_runtime.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.B7UNwtVr.css"
+      "_app/immutable/assets/_page.B01sEJCV.css"
     ],
     "assets": [
       "_app/immutable/assets/nexo_screenshot.Bcm4Ri0h.png"
@@ -214,14 +276,14 @@
     "isEntry": true,
     "imports": [
       "_navigations.js",
-      "_index.js"
+      "_index2.js",
+      "_runtime.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.BbbLU6rH.css"
+      "_app/immutable/assets/_page.B2NJW1vR.css"
     ],
     "assets": [
       "_app/immutable/assets/nexo_mockup.BQrQL36w.png",
-      "_app/immutable/assets/strayvoid_mockup.qYt_PjMJ.png",
       "_app/immutable/assets/lifemap_mockup.CSwFbW8e.png"
     ]
   },
@@ -232,11 +294,12 @@
     "isEntry": true,
     "imports": [
       "_navigations.js",
-      "_index.js",
-      "_use-motion-template.js"
+      "_index2.js",
+      "_use-motion-template.js",
+      "_runtime.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.IBuK5Yat.css"
+      "_app/immutable/assets/_page.XsA9NxwF.css"
     ],
     "assets": [
       "_app/immutable/assets/Javascript_Logo.DpxT93Ny.svg",

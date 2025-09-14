@@ -1,13 +1,13 @@
-import { Q as current_component, z as push, M as slot, O as bind_props, C as pop, E as getContext, A as setContext, I as fallback, R as store_get, S as unsubscribe_stores, N as invalid_default_snippet, T as sanitize_props, U as rest_props, V as ensure_array_like, J as attr_class, K as clsx$1, P as attr, W as stringify } from "./index.js";
+import { S as current_component, z as push, O as slot, Q as bind_props, B as pop, E as getContext, A as setContext, K as fallback, I as store_get, J as unsubscribe_stores, P as invalid_default_snippet, T as sanitize_props, U as rest_props, V as ensure_array_like, M as attr_class, N as clsx$1 } from "./index2.js";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { w as writable, g as get, r as readable, d as derived } from "./index2.js";
+import { w as writable, g as get, r as readable, d as derived } from "./index.js";
 import { __read, __spreadArray, __rest } from "tslib";
 import sync, { getFrameData, cancelSync, flushSync } from "framesync";
 import { velocityPerSecond, cubicBezier, bounceOut, bounceInOut, bounceIn, anticipate, backOut, backInOut, backIn, circOut, circInOut, circIn, easeOut, easeInOut, easeIn, linear, inertia, animate, mix, distance, progress, clamp, pipe } from "popmotion";
 import { complex, number, alpha, px, progressPercentage, degrees, scale, filter, color, percent, vw, vh } from "style-value-types";
 import { warning, invariant } from "hey-listen";
-import { b as base } from "./paths.js";
+import { a as $locale } from "./runtime.js";
 function onDestroy(fn) {
   var context = (
     /** @type {Component} */
@@ -37,7 +37,7 @@ function removeItem(arr, item) {
 }
 var SubscriptionManager = (
   /** @class */
-  function() {
+  (function() {
     function SubscriptionManager2() {
       this.subscriptions = [];
     }
@@ -68,14 +68,14 @@ var SubscriptionManager = (
       this.subscriptions.length = 0;
     };
     return SubscriptionManager2;
-  }()
+  })()
 );
 var isFloat = function(value) {
   return !isNaN(parseFloat(value));
 };
 var MotionValue = (
   /** @class */
-  function() {
+  (function() {
     function MotionValue2(init, startStopNotifier) {
       var _this = this;
       this.timeDelta = 0;
@@ -226,7 +226,7 @@ var MotionValue = (
       this.onUnsubscription();
     };
     return MotionValue2;
-  }()
+  })()
 );
 function motionValue(init, startStopNotifier) {
   return new MotionValue(init, startStopNotifier);
@@ -270,9 +270,9 @@ function ScaleCorrectionProvider($$payload, $$props) {
   push();
   let isCustom = $$props["isCustom"];
   provideScaleCorrection(isCustom);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   slot($$payload, $$props, "default", {}, null);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   bind_props($$props, { isCustom });
   pop();
 }
@@ -1418,7 +1418,7 @@ var compareByDepth = function(a, b) {
 };
 var FlatTree = (
   /** @class */
-  function() {
+  (function() {
     function FlatTree2() {
       this.children = [];
       this.isDirty = false;
@@ -1439,7 +1439,7 @@ var FlatTree = (
       }
     };
     return FlatTree2;
-  }()
+  })()
 );
 function calcRelativeOffsetAxis(parent, child) {
   return {
@@ -2333,17 +2333,11 @@ function UseVisualElement($$payload, $$props) {
     visualElement2.isPresenceRoot = !parent || parent.presenceId !== store_get($$store_subs ??= {}, "$presenceContext", presenceContext)?.id;
     visualElement2.syncRender();
   }
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   slot($$payload, $$props, "default", { visualElement: visualElement2 }, null);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   if ($$store_subs) unsubscribe_stores($$store_subs);
-  bind_props($$props, {
-    createVisualElement,
-    props,
-    Component,
-    visualState,
-    isCustom
-  });
+  bind_props($$props, { createVisualElement, props, Component, visualState, isCustom });
   pop();
 }
 var createDefinition = function(propNames) {
@@ -2404,14 +2398,14 @@ function UseFeatures($$payload, $$props) {
     }
   }
   if (visualElement2) {
-    $$payload.out += "<!--[-->";
-    $$payload.out += `<!---->`;
+    $$payload.out.push("<!--[-->");
+    $$payload.out.push(`<!---->`);
     slot($$payload, $$props, "default", { features }, null);
-    $$payload.out += `<!---->`;
+    $$payload.out.push(`<!---->`);
   } else {
-    $$payload.out += "<!--[!-->";
+    $$payload.out.push("<!--[!-->");
   }
-  $$payload.out += `<!--]-->`;
+  $$payload.out.push(`<!--]-->`);
   bind_props($$props, { visualElement: visualElement2, props });
   pop();
 }
@@ -2425,9 +2419,9 @@ function MotionContextProvider($$payload, $$props) {
     value?.visualElement?.unmount();
   });
   store.set(value);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   slot($$payload, $$props, "default", {}, null);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   bind_props($$props, { value, isCustom });
   pop();
 }
@@ -2576,9 +2570,9 @@ function UseInitialMotionValues($$payload, $$props) {
     return { ...vars, ...style };
   };
   styles = memo();
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   slot($$payload, $$props, "default", { styles }, null);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   bind_props($$props, { visualState, isStatic, props });
   pop();
 }
@@ -2611,9 +2605,9 @@ function UseStyle($$payload, $$props) {
     children: invalid_default_snippet,
     $$slots: {
       default: ($$payload2, { styles: s1 }) => {
-        $$payload2.out += `<!---->`;
+        $$payload2.out.push(`<!---->`);
         slot($$payload2, $$props, "default", { styles: toStyle(s1) }, null);
-        $$payload2.out += `<!---->`;
+        $$payload2.out.push(`<!---->`);
       }
     }
   });
@@ -2639,9 +2633,9 @@ function UseHTMLProps($$payload, $$props) {
     children: invalid_default_snippet,
     $$slots: {
       default: ($$payload2, { styles }) => {
-        $$payload2.out += `<!---->`;
+        $$payload2.out.push(`<!---->`);
         slot($$payload2, $$props, "default", { visualProps: getHTMLProps(styles, props) }, null);
-        $$payload2.out += `<!---->`;
+        $$payload2.out.push(`<!---->`);
       }
     }
   });
@@ -2712,9 +2706,9 @@ function UseSVGProps($$payload, $$props) {
     copyRawValuesOnly(rawStyles, props.style, props);
     visualProps.style = { ...rawStyles, ...visualProps.style };
   }
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   slot($$payload, $$props, "default", { visualProps }, null);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   bind_props($$props, { visualState, props });
   pop();
 }
@@ -2752,7 +2746,7 @@ function UseRender($$payload, $$props) {
   if (targetEl) {
     motion2(targetEl);
   }
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   (Component === "SVG" ? UseSVGProps : UseHTMLProps)?.($$payload, {
     visualState,
     isStatic,
@@ -2760,22 +2754,13 @@ function UseRender($$payload, $$props) {
     children: invalid_default_snippet,
     $$slots: {
       default: ($$payload2, { visualProps }) => {
-        $$payload2.out += `<!---->`;
-        slot(
-          $$payload2,
-          $$props,
-          "default",
-          {
-            motion: motion2,
-            props: { ...filteredProps, ...visualProps }
-          },
-          null
-        );
-        $$payload2.out += `<!---->`;
+        $$payload2.out.push(`<!---->`);
+        slot($$payload2, $$props, "default", { motion: motion2, props: { ...filteredProps, ...visualProps } }, null);
+        $$payload2.out.push(`<!---->`);
       }
     }
   });
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   bind_props($$props, {
     props,
     visualState,
@@ -3269,9 +3254,9 @@ function UseCreateMotionContext($$payload, $$props) {
   if (isStatic) {
     value = memo(variantLabelsAsDependency(initial), variantLabelsAsDependency(animate2));
   }
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   slot($$payload, $$props, "default", { value }, null);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   if ($$store_subs) unsubscribe_stores($$store_subs);
   bind_props($$props, { props, isStatic, isCustom });
   pop();
@@ -3280,11 +3265,7 @@ function resolveMotionValue(value) {
   var unwrappedValue = isMotionValue(value) ? value.get() : value;
   return isCustomValue(unwrappedValue) ? unwrappedValue.toValue() : unwrappedValue;
 }
-const makeState = ({
-  scrapeMotionValuesFromProps: scrapeMotionValuesFromProps2,
-  createRenderState,
-  onMount
-}, props, context, presenceContext) => {
+const makeState = ({ scrapeMotionValuesFromProps: scrapeMotionValuesFromProps2, createRenderState, onMount }, props, context, presenceContext) => {
   const state = {
     latestValues: makeLatestValues(props, context, presenceContext, scrapeMotionValuesFromProps2),
     renderState: createRenderState()
@@ -3332,9 +3313,9 @@ function UseVisualState($$payload, $$props) {
   if (isStatic) {
     state = ms(config, props, store_get($$store_subs ??= {}, "$context", context), store_get($$store_subs ??= {}, "$presenceContext", presenceContext));
   }
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   slot($$payload, $$props, "default", { state }, null);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   if ($$store_subs) unsubscribe_stores($$store_subs);
   bind_props($$props, { config, props, isStatic, isCustom });
   pop();
@@ -3360,12 +3341,7 @@ function useMotionRef(visualState, visualElement2, externalRef) {
 }
 function Motion($$payload, $$props) {
   const $$sanitized_props = sanitize_props($$props);
-  const $$restProps = rest_props($$sanitized_props, [
-    "isSVG",
-    "forwardMotionProps",
-    "externalRef",
-    "targetEl"
-  ]);
+  const $$restProps = rest_props($$sanitized_props, ["isSVG", "forwardMotionProps", "externalRef", "targetEl"]);
   push();
   var $$store_subs;
   let motionProps, isStatic;
@@ -3428,20 +3404,20 @@ function Motion($$payload, $$props) {
                                     children: invalid_default_snippet,
                                     $$slots: {
                                       default: ($$payload8, { motion: motion2, props: renderProps }) => {
-                                        $$payload8.out += `<!---->`;
+                                        $$payload8.out.push(`<!---->`);
                                         slot($$payload8, $$props, "default", { motion: motion2, props: renderProps }, null);
-                                        $$payload8.out += `<!---->`;
+                                        $$payload8.out.push(`<!---->`);
                                       }
                                     }
                                   });
                                 },
                                 $$slots: { default: true }
                               });
-                              $$payload6.out += `<!----> `;
+                              $$payload6.out.push(`<!----> `);
                               {
-                                $$payload6.out += "<!--[!-->";
+                                $$payload6.out.push("<!--[!-->");
                               }
-                              $$payload6.out += `<!--]-->`;
+                              $$payload6.out.push(`<!--]-->`);
                             }
                           }
                         });
@@ -3458,12 +3434,7 @@ function Motion($$payload, $$props) {
     $$slots: { default: true }
   });
   if ($$store_subs) unsubscribe_stores($$store_subs);
-  bind_props($$props, {
-    isSVG,
-    forwardMotionProps,
-    externalRef,
-    targetEl
-  });
+  bind_props($$props, { isSVG, forwardMotionProps, externalRef, targetEl });
   pop();
 }
 function addDomEvent(target, eventName, handler, options) {
@@ -3492,9 +3463,9 @@ function UseDomEvent($$payload, $$props) {
   };
   onDestroy(cleanup);
   cleanup = effect();
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   slot($$payload, $$props, "default", {}, null);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   bind_props($$props, { ref, eventName, handler, options });
   pop();
 }
@@ -3606,9 +3577,9 @@ function UsePointerEvent($$payload, $$props) {
     handler: handler && wrapHandler(handler, eventName === "pointerdown"),
     options,
     children: ($$payload2) => {
-      $$payload2.out += `<!---->`;
+      $$payload2.out.push(`<!---->`);
       slot($$payload2, $$props, "default", {}, null);
-      $$payload2.out += `<!---->`;
+      $$payload2.out.push(`<!---->`);
     },
     $$slots: { default: true }
   });
@@ -3617,7 +3588,7 @@ function UsePointerEvent($$payload, $$props) {
 }
 var PanSession = (
   /** @class */
-  function() {
+  (function() {
     function PanSession2(event, handlers, _a) {
       var _this = this;
       var _b = _a === void 0 ? {} : _a, transformPagePoint = _b.transformPagePoint;
@@ -3682,7 +3653,7 @@ var PanSession = (
       cancelSync.update(this.updatePoint);
     };
     return PanSession2;
-  }()
+  })()
 );
 function transformPoint(info, transformPagePoint) {
   return transformPagePoint ? { point: transformPagePoint(info.point) } : info;
@@ -3760,12 +3731,7 @@ function UsePanGesture($$payload, $$props) {
     panSession = new PanSession(event, handlers, { transformPagePoint });
   }
   onDestroy(() => panSession && panSession.end());
-  ({
-    onPan,
-    onPanStart,
-    onPanEnd,
-    onPanSessionStart
-  } = props);
+  ({ onPan, onPanStart, onPanEnd, onPanSessionStart } = props);
   hasPanEvents = onPan || onPanStart || onPanEnd || onPanSessionStart;
   ({ transformPagePoint } = store_get($$store_subs ??= {}, "$mcc", mcc));
   handlers = {
@@ -3782,9 +3748,9 @@ function UsePanGesture($$payload, $$props) {
     eventName: "pointerdown",
     handler: hasPanEvents && onPointerDown,
     children: ($$payload2) => {
-      $$payload2.out += `<!---->`;
+      $$payload2.out.push(`<!---->`);
       slot($$payload2, $$props, "default", {}, null);
-      $$payload2.out += `<!---->`;
+      $$payload2.out.push(`<!---->`);
     },
     $$slots: { default: true }
   });
@@ -3886,9 +3852,9 @@ function UseTapGesture($$payload, $$props) {
     eventName: "pointerdown",
     handler: hasPressListeners ? onPointerDown : void 0,
     children: ($$payload2) => {
-      $$payload2.out += `<!---->`;
+      $$payload2.out.push(`<!---->`);
       slot($$payload2, $$props, "default", {}, null);
-      $$payload2.out += `<!---->`;
+      $$payload2.out.push(`<!---->`);
     },
     $$slots: { default: true }
   });
@@ -3912,15 +3878,15 @@ function UseHoverGesture($$payload, $$props) {
     eventName: "pointerenter",
     handler: onHoverStart || whileHover ? createHoverEvent(visualElement2, true, onHoverStart) : void 0
   });
-  $$payload.out += `<!----> `;
+  $$payload.out.push(`<!----> `);
   UsePointerEvent($$payload, {
     ref: visualElement2,
     eventName: "pointerleave",
     handler: onHoverEnd || whileHover ? createHoverEvent(visualElement2, false, onHoverEnd) : void 0
   });
-  $$payload.out += `<!----> <!---->`;
+  $$payload.out.push(`<!----> <!---->`);
   slot($$payload, $$props, "default", {}, null);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   bind_props($$props, { props, visualElement: visualElement2 });
   pop();
 }
@@ -3945,9 +3911,9 @@ function UseFocusGesture($$payload, $$props) {
         eventName: "blur",
         handler: whileFocus ? onBlur : void 0,
         children: ($$payload3) => {
-          $$payload3.out += `<!---->`;
+          $$payload3.out.push(`<!---->`);
           slot($$payload3, $$props, "default", {}, null);
-          $$payload3.out += `<!---->`;
+          $$payload3.out.push(`<!---->`);
         },
         $$slots: { default: true }
       });
@@ -4070,7 +4036,7 @@ var elementDragControls = /* @__PURE__ */ new WeakMap();
 var lastPointerEvent;
 var VisualElementDragControls = (
   /** @class */
-  function() {
+  (function() {
     function VisualElementDragControls2(_a) {
       var visualElement2 = _a.visualElement;
       this.isDragging = false;
@@ -4451,7 +4417,7 @@ var VisualElementDragControls = (
       };
     };
     return VisualElementDragControls2;
-  }()
+  })()
 );
 function shouldDrag(direction, drag2, currentDirection) {
   return (drag2 === true || drag2 === direction) && (currentDirection === null || currentDirection === direction);
@@ -4495,9 +4461,9 @@ function UseDrag($$payload, $$props) {
   ({ transformPagePoint } = store_get($$store_subs ??= {}, "$mcc", mcc));
   dragControls.setProps({ ...props, transformPagePoint });
   dragEffect();
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   slot($$payload, $$props, "default", {}, null);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   if ($$store_subs) unsubscribe_stores($$store_subs);
   bind_props($$props, { visualElement: visualElement2, props, isCustom });
   pop();
@@ -4568,12 +4534,7 @@ function Measure($$payload, $$props) {
   };
   scaleCorrectionParentContext.update((v) => v.concat([{ updater, afterU }]));
   update !== void 0 && updater(update);
-  bind_props($$props, {
-    visualElement: visualElement2,
-    syncLayout,
-    framerSyncLayout,
-    update
-  });
+  bind_props($$props, { visualElement: visualElement2, syncLayout, framerSyncLayout, update });
   pop();
 }
 function MeasureContextProvider($$payload, $$props) {
@@ -4607,7 +4568,10 @@ function AnimationState($$payload, $$props) {
     visualElement2.animationState = visualElement2.animationState || createAnimationState(visualElement2);
   }
   if (isAnimationControls(animate2)) {
-    tick().then(() => animate2.subscribe(visualElement2));
+    tick().then(
+      () => animate2.subscribe(visualElement2)
+      /*, [animate]*/
+    );
   }
   bind_props($$props, { visualElement: visualElement2, props });
   pop();
@@ -4629,9 +4593,9 @@ function Exit($$payload, $$props) {
   };
   ({ custom } = props);
   effect(store_get($$store_subs ??= {}, "$presence", presence));
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   slot($$payload, $$props, "default", {}, null);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   if ($$store_subs) unsubscribe_stores($$store_subs);
   bind_props($$props, { props, visualElement: visualElement2, isCustom });
   pop();
@@ -4695,9 +4659,9 @@ function PresenceChild($$payload, $$props) {
   tick().then(() => {
     !isPresent2 && !presenceChildren.size && onExitComplete?.();
   });
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   slot($$payload, $$props, "default", {}, null);
-  $$payload.out += `<!---->`;
+  $$payload.out.push(`<!---->`);
   bind_props($$props, {
     isPresent: isPresent2,
     onExitComplete,
@@ -4779,19 +4743,14 @@ function AnimatePresence($$payload, $$props) {
           onExitComplete && onExitComplete();
         }
       };
-      childrenToRender.splice(insertionIndex, 0, {
-        present: false,
-        item: child,
-        key: getChildKey(child),
-        onExit
-      });
+      childrenToRender.splice(insertionIndex, 0, { present: false, item: child, key: getChildKey(child), onExit });
     });
     presentChildren = childrenToRender;
   } else {
     isInitialRender = false;
   }
   const each_array = ensure_array_like(childrenToRender);
-  $$payload.out += `<!--[-->`;
+  $$payload.out.push(`<!--[-->`);
   for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
     let child = each_array[$$index];
     PresenceChild($$payload, {
@@ -4802,14 +4761,14 @@ function AnimatePresence($$payload, $$props) {
       onExitComplete: child.onExit,
       isCustom,
       children: ($$payload2) => {
-        $$payload2.out += `<!---->`;
+        $$payload2.out.push(`<!---->`);
         slot($$payload2, $$props, "default", { item: child.item }, null);
-        $$payload2.out += `<!---->`;
+        $$payload2.out.push(`<!---->`);
       },
       $$slots: { default: true }
     });
   }
-  $$payload.out += `<!--]-->`;
+  $$payload.out.push(`<!--]-->`);
   if ($$store_subs) unsubscribe_stores($$store_subs);
   bind_props($$props, {
     list,
@@ -4837,11 +4796,7 @@ function BlurFade($$payload, $$props) {
   let id = fallback($$props["id"], () => "fallback-id", true);
   let once = fallback($$props["once"], false);
   let defaultVariants = {
-    hidden: {
-      opacity: 0,
-      y: yOffset,
-      filter: `blur(${blur})`
-    },
+    hidden: { opacity: 0, y: yOffset, filter: `blur(${blur})` },
     visible: { opacity: 1, y: 0, filter: `blur(0px)` }
   };
   let isInView = "hidden";
@@ -4856,19 +4811,15 @@ function BlurFade($$payload, $$props) {
           animate: isInView,
           exit: "hidden",
           variants: defaultVariants,
-          transition: {
-            delay: 0.04 + delay,
-            duration,
-            ease: "easeOut"
-          },
+          transition: { delay: 0.04 + delay, duration, ease: "easeOut" },
           children: invalid_default_snippet,
           $$slots: {
             default: ($$payload3, { motion: motion2 }) => {
-              $$payload3.out += `<div${attr_class(clsx$1(cn(className)))}><!---->`;
+              $$payload3.out.push(`<div${attr_class(clsx$1(cn(className)))}><!---->`);
               slot($$payload3, $$props, "default", {}, () => {
-                $$payload3.out += `Default`;
+                $$payload3.out.push(`Default`);
               });
-              $$payload3.out += `<!----></div>`;
+              $$payload3.out.push(`<!----></div>`);
             }
           }
         });
@@ -4887,8 +4838,30 @@ function BlurFade($$payload, $$props) {
   });
   pop();
 }
-function Navigations($$payload) {
-  $$payload.out += `<div class="btm-nav max-w-[16rem] max-h-[4rem] place-self-center mb-3 rounded-lg text-xl shadow-2xl bg-primary"><a aria-label="Home"${attr("href", `${stringify(base)}/`)} class="svelte-1kgnly8"><i class="fa-solid fa-house svelte-1kgnly8"></i></a> <a aria-label="Contact"${attr("href", `${stringify(base)}/contact`)} class="svelte-1kgnly8"><i class="fa-solid fa-address-book svelte-1kgnly8"></i></a> <a aria-label="Skills"${attr("href", `${stringify(base)}/skills`)} class="svelte-1kgnly8"><i class="fa-solid fa-tools svelte-1kgnly8"></i></a> <a aria-label="Projects"${attr("href", `${stringify(base)}/projects`)} class="svelte-1kgnly8"><i class="fa-solid fa-suitcase svelte-1kgnly8"></i></a></div>`;
+function Navigations($$payload, $$props) {
+  push();
+  var $$store_subs;
+  $$payload.out.push(`<div class="btm-nav max-w-[20rem] max-h-[4rem] place-self-center mb-3 rounded-lg text-xl shadow-2xl bg-primary"><a aria-label="Home" href="/" class="svelte-1an5wvj"><i class="fa-solid fa-house svelte-1an5wvj"></i></a> <a aria-label="Contact" href="/contact" class="svelte-1an5wvj"><i class="fa-solid fa-address-book svelte-1an5wvj"></i></a> <a aria-label="Skills" href="/skills" class="svelte-1an5wvj"><i class="fa-solid fa-tools svelte-1an5wvj"></i></a> <a aria-label="Projects" href="/projects" class="svelte-1an5wvj"><i class="fa-solid fa-suitcase svelte-1an5wvj"></i></a> <div class="dropdown dropdown-top dropdown-center"><div tabindex="0" role="button" class="flex justify-center items-center w-full h-full cursor-pointer"><i class="fa-solid fa-globe"></i></div> <ul class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow-lg"><li><button${attr_class("", void 0, {
+    "active": store_get($$store_subs ??= {}, "$locale", $locale) === "en" || store_get($$store_subs ??= {}, "$locale", $locale) === "en-US"
+  })}><span>🇺🇸 English</span> `);
+  if (store_get($$store_subs ??= {}, "$locale", $locale) === "en" || store_get($$store_subs ??= {}, "$locale", $locale) === "en-US") {
+    $$payload.out.push("<!--[-->");
+    $$payload.out.push(`<i class="fa-solid fa-check"></i>`);
+  } else {
+    $$payload.out.push("<!--[!-->");
+  }
+  $$payload.out.push(`<!--]--></button></li> <li><button${attr_class("", void 0, {
+    "active": store_get($$store_subs ??= {}, "$locale", $locale) === "pl"
+  })}><span>🇵🇱 Polski</span> `);
+  if (store_get($$store_subs ??= {}, "$locale", $locale) === "pl") {
+    $$payload.out.push("<!--[-->");
+    $$payload.out.push(`<i class="fa-solid fa-check"></i>`);
+  } else {
+    $$payload.out.push("<!--[!-->");
+  }
+  $$payload.out.push(`<!--]--></button></li></ul></div></div>`);
+  if ($$store_subs) unsubscribe_stores($$store_subs);
+  pop();
 }
 export {
   BlurFade as B,
