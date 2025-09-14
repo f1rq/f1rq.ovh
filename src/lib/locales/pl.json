@@ -1,0 +1,21 @@
+{
+  "hero_title": "Cześć, jestem ",
+  "hero_main1": "Jestem programistą i uczniem technikum z Polski i lubię motocykle. Obecnie skupiam się na tworzeniu aplikacji i stron internetowych w Svelte oraz na tworzeniu aplikacji mobilnych w Kotlin, może w przyszłości także w Swift. Próbuje również nauczyć się japońskiego i hiszpańskiego.",
+  "hero_main2": "Jestem otwarty na oferty zleceń!",
+
+  "contact_title": "Skontaktuj się ze mną",
+  "contact_discord": "Aby skontaktować się ze mną przez Discord, dodaj mnie: ",
+  "contact_email": "Aby skontaktować się ze mną przez E-Mail, napisz na:",
+
+  "skills_title": "Moje umiejętności:",
+
+  "projects_title": "Projekty, nad którymi pracuję:",
+  "projects_lifemap_desc": "LifeMap to osobisty tracker życia, który wizualnie organizuje ważne wydarzenia, cele i wspomnienia w formacie osi czasu i mapy.",
+  "projects_nexo_desc": "Mój własny bot na Discorda, napisany w Pythonie przy użyciu biblioteki discord.py.",
+      "nexo_title": "Nexo bot na Discorda",
+      "nexo_desc1": "Mój własny bot na Discorda, napisany w Pythonie przy użyciu biblioteki discord.py. Jego celem jest używanie go na moim własnym ",
+      "nexo_desc2": "serwerze Discord",
+      "nexo_desc3": ", i ma lub będzie miał wiele funkcji, takich jak: moderacja, zabawa i więcej. Wciąż jest w fazie rozwoju, ale jest już użyteczny.",
+      "nexo_desc4": "Zawiera takie komendy jak: ",
+      "nexo_desc5": "i wiele więcej, także wciąż dodaję nowe funkcje. Sugestie są mile widziane."
+}

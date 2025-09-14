@@ -23,3 +23,23 @@ declare module "svelte/elements" {
 }
 
 export {};
+
+
+declare module "$app/types" {
+	export interface AppTypes {
+		RouteId(): "/" | "/contact" | "/nexo_project" | "/projects" | "/skills";
+		RouteParams(): {
+			
+		};
+		LayoutParams(): {
+			"/": Record<string, never>;
+			"/contact": Record<string, never>;
+			"/nexo_project": Record<string, never>;
+			"/projects": Record<string, never>;
+			"/skills": Record<string, never>
+		};
+		Pathname(): "/" | "/contact" | "/contact/" | "/nexo_project" | "/nexo_project/" | "/projects" | "/projects/" | "/skills" | "/skills/";
+		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
+		Asset(): "/.nojekyll" | "/favicon.ico" | "/favicon.png" | "/font/simple-icons.css" | string & {};
+	}
+}

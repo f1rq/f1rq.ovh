@@ -1,0 +1,21 @@
+{
+  "hero_title": "Hi, I'm ",
+  "hero_main1": "I'm a programmer, and high school student from Poland and I like motorcycles a lot. I'm currently focused on Svelte, Python and planning to learn C# or C++ and learning video montage. I'm also trying to learn Japanese and Spanish.",
+  "hero_main2": "I'm open for freelance offers!",
+
+  "contact_title": "Contact me",
+  "contact_discord": "To contact me via Discord, add me: ",
+  "contact_email": "To contact me via E-Mail, send message at:",
+
+  "skills_title": "My skills:",
+
+  "projects_title": "Projects, that I'm working on:",
+  "projects_lifemap_desc": "LifeMap is a personal life tracker that visually organizes important events, goals, and memories in a timeline and map format.",
+  "projects_nexo_desc": "My own personal bot for Discord, written in Python using the discord.py library.",
+      "nexo_title": "Nexo bot for Discord",
+      "nexo_desc1": "My own personal bot for Discord, written in Python using the discord.py library. It's purpose is to use on my own ",
+      "nexo_desc2": "Discord server",
+      "nexo_desc3": ", and it has or will have a lot of features, such as: moderation, fun, and more. It's still under development, but it's already usable.",
+      "nexo_desc4": "It contains commands such as: ",
+      "nexo_desc5": "and much more, also I'm still adding new features. Suggestions are welcome"
+}

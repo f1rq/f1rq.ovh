@@ -10,11 +10,12 @@
     import Mysql_Logo from "$lib/img/Mysql_Logo.svg";
     import discordpy_logo from "$lib/img/discordpy_logo.png";
     import ArduinoLogo from "$lib/img/Arduino_Logo.svg";
+    import { _, locale } from 'svelte-i18n'
 </script>
 
 <div class="h-screen flex flex-col items-center justify-center">
     <BlurFade delay={0.10}>
-    <h1 class="text-4xl mb-12 text-center">Skills or technologies I'm familiar with:</h1>
+    <h1 class="text-4xl mb-12 text-center">{$_('skills_title')}</h1>
     </BlurFade>
     <BlurFade delay={0.10 * 2}>
     <div class="gapphone grid grid-cols-4 gap-4 container">

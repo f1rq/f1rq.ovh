@@ -3,11 +3,12 @@
     import BlurFade from "./BlurFade.svelte";
     let isModalOpen = false;
     let isModalOpen2 = false;
+    import { _, locale } from 'svelte-i18n'
 </script>
 
 <div class="container flex flex-col min-h-screen justify-center items-center place-self-center">
   <BlurFade delay={0.10}>
-  <h1 class="text-5xl mb-4">Contact me</h1>
+  <h1 class="text-5xl mb-4">{$_('contact_title')}</h1>
   </BlurFade>
   <BlurFade delay={0.10 * 2}>
   <button on:click={()=>isModalOpen = true} class="mr-8 w-[13.5rem]">
@@ -42,7 +43,7 @@
   <dialog class="modal modal-bottom sm:modal-middle" class:modal-open={isModalOpen}>
     <div class="modal-box">
       <h3 class="text-lg font-bold">Discord</h3>
-      <p class="py-4">To contact me via Discord, add me: <span class="text-[#7289DA]">f1rq</span></p>
+      <p class="py-4">{$_('contact_discord')}<span class="text-[#7289DA]">f1rq</span></p>
       <div class="modal-action">
         <form method="dialog">
           <button class="btn" on:click={()=>isModalOpen = false}>Close</button>
@@ -54,7 +55,7 @@
   <dialog class="modal modal-bottom sm:modal-middle" class:modal-open={isModalOpen2}>
     <div class="modal-box">
       <h3 class="text-lg font-bold">E-Mail</h3>
-      <p class="py-4">To contact me via E-Mail, send message at:<br>
+      <p class="py-4">{$_('contact_email')}<br>
         <a href="mailto:contact@f1rq.ovh"><span class="text-[#bf0404] hover:text-[#ff0303] transition-colors">contact@f1rq.ovh</span></a></p>
 
       <div class="modal-action">

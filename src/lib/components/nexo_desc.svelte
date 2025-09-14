@@ -1,11 +1,12 @@
 <script>
     import BlurFade from "./BlurFade.svelte";
     import nexo_screenshot from "$lib/img/nexo_screenshot.png"
+    import { _, locale } from 'svelte-i18n'
 </script>
 
 <BlurFade delay={0.10}>
     <div class="cheight1 flex flex-col items-center justify-center">
-        <h1 class="ctext1 text-4xl mb-8 text-center">Nexo bot for Discord</h1>
+        <h1 class="ctext1 text-4xl mb-8 text-center">{$_('nexo_title')}</h1>
         <BlurFade delay={0.10 * 2}>
             <div class="siatka grid gap-8">
                 <div class="mwp  ">
@@ -21,8 +22,8 @@
             </div> 
 
                 <div class="flex flex-col justify-center items-center sm:block mb-24">
-                    <p class="ctext2 max-w-96 text-xl">My own personal bot for Discord, written in Python using the discord.py library. It's purpose is to use on my own <a href="https://discord.gg/YU5yWFt7vB" class="text-[#7289DA] hover:text-[#425082] transition-colors">Discord server</a>, and it has or will have a lot of features, such as: moderation, fun, and more. It's still under development, but it's already usable.
-                        It contains commands such as: </p>
+                    <p class="ctext2 max-w-96 text-xl">{$_('nexo_desc1')}<a href="https://discord.gg/YU5yWFt7vB" class="text-[#7289DA] hover:text-[#425082] transition-colors">{$_('nexo_desc2')}</a>{$_('nexo_desc3')}
+                        {$_('nexo_desc4')} </p>
                         <ul class="list-disc list-inside my-2 ml-4">
                             <li>/mute</li>
                             <li>/warn</li>
@@ -32,7 +33,7 @@
                             <li>/kick</li>
                             <li>/ban</li>
                         </ul>
-                    <p class="ctext2 max-w-96 text-xl">and much more, also I'm still adding new features. Suggestions are welcome.</p>
+                    <p class="ctext2 max-w-96 text-xl">{$_('nexo_desc5')}</p>
                 </div>
             </div>
         </BlurFade>

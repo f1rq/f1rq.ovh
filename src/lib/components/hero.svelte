@@ -4,6 +4,7 @@
 <script>
   import BlurFade from "./BlurFade.svelte";
   import { browser } from "$app/environment";
+  import { _, locale } from 'svelte-i18n'
 </script>
 <style>
   .hero p {
@@ -27,11 +28,11 @@
     <div class="hero-content flex-col lg:flex-row-reverse">
       <div>
         <BlurFade delay={0.10}>
-        <h1 class="text-5xl">Hi, I'm <span class="text-accent">f1rq</span></h1>
+        <h1 class="text-5xl">{$_('hero_title')}<span class="text-accent">f1rq</span></h1>
         </BlurFade>
         <BlurFade delay={0.10 * 2}>
         <p class="py-6">
-            I'm a programmer, and high school student from Poland and I like motorcycles a lot. I'm currently focused on Svelte, Python and planning to learn C# or C++ and learning video montage. I'm also trying to learn Japanese and Spanish.<br> <span class="font-[1000] text-xl">I'm open for freelance offers!</span>
+            {$_('hero_main1')}<br> <span class="font-[1000] text-xl">{$_('hero_main2')}</span>
         </p>
         </BlurFade>
         <BlurFade delay={0.10 * 3}>
