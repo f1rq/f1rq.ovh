@@ -1,7 +1,9 @@
 <script>
     import '@fortawesome/fontawesome-free/css/all.min.css'
-    import { locale, isLoading } from 'svelte-i18n';
+    import { locale } from 'svelte-i18n';
     import { onMount } from 'svelte';
+
+    let dropdownOpen = false;
 
     onMount(() => {
         console.log('Initial locale:', $locale);
@@ -9,12 +11,11 @@
 
     function changeLanguage(lang) {
         locale.set(lang);
-        // Close dropdown by removing focus and clicking outside
-        const activeEl = document.activeElement;
-        if (activeEl && activeEl instanceof HTMLElement) {
-            activeEl.blur();
-        }
-        document.body.click();
+        dropdownOpen = false; // Close dropdown after selection
+    }
+
+    function toggleDropdown() {
+        dropdownOpen = !dropdownOpen;
     }
 </script>
 
@@ -50,10 +51,14 @@
     <a aria-label="Projects" href="/projects">
         <i class="fa-solid fa-suitcase"></i>
     </a>
-    <div class="dropdown dropdown-top dropdown-center">
-        <div tabindex="0" role="button" class="flex justify-center items-center w-full h-full cursor-pointer">
+    <div class="dropdown dropdown-top dropdown-end" class:dropdown-open={dropdownOpen}>
+        <button
+                type="button"
+                class="flex justify-center items-center w-full h-full cursor-pointer"
+                on:click={toggleDropdown}
+                aria-label="Language selector">
             <i class="fa-solid fa-globe"></i>
-        </div>
+        </button>
         <ul class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow-lg">
             <li>
                 <button
@@ -76,6 +81,5 @@
                 </button>
             </li>
         </ul>
-
     </div>
 </div>
