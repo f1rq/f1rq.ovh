@@ -4,15 +4,24 @@
 
     let scrollY = 0
     let heroHeight = 0
+    let isPolish = false
 
     onMount(() => {
         const heroElement = document.querySelector('.hero')
         if (heroElement) {
             heroHeight = (heroElement as HTMLElement).offsetHeight
         }
+
+        // Set initial state based on current locale
+        isPolish = $locale === 'pl'
     })
 
     $: isInHero = scrollY < heroHeight - 100
+
+    // React to checkbox changes
+    $: if (isPolish !== undefined) {
+        locale.set(isPolish ? 'pl' : 'en')
+    }
 </script>
 
 <svelte:window bind:scrollY />
@@ -24,7 +33,12 @@
             <li><a class="transition-colors duration-300 {isInHero ? 'text-[#1D232A]' : 'text-base-content'}">{$_('nav2')}</a></li>
             <li><a class="transition-colors duration-300 {isInHero ? 'text-[#1D232A]' : 'text-base-content'}">{$_('nav3')}</a></li>
         </ul>
-        <div class="px-4">
+        <div class="px-4 gap-6 inline-flex items-center">
+            <label class="swap">
+                <input type="checkbox" bind:checked={isPolish} />
+                <div class="swap-on transition-colors duration-300 {isInHero ? 'text-[#1D232A]' : 'text-base-content'}">🇵🇱</div>
+                <div class="swap-off transition-colors duration-300 {isInHero ? 'text-[#1D232A]' : 'text-base-content'}">🇺🇸</div>
+            </label>
             <span class="font-medium transition-colors duration-300 {isInHero ? 'text-[#1D232A]' : 'text-base-content'}">f1rq</span>
         </div>
     </div>
