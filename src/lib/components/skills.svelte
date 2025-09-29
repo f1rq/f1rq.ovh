@@ -1,4 +1,6 @@
 <script>
+    import { _, locale } from 'svelte-i18n'
+
     import jsLogo from "$lib/assets/skills/Javascript_Logo.svg"
     import svelteLogo from "$lib/assets/skills/Svelte_Logo.svg"
     import tailwindLogo from "$lib/assets/skills/Tailwind_Logo.svg"
@@ -29,7 +31,7 @@
 <div class="min-h-screen p-8 flex items-center justify-center">
     <div class="w-full max-w-6xl">
         <ScrollReveal duration={400} delay={0}>
-            <h1 class="text-6xl font-bold mb-12">My skills</h1>
+            <h1 class="text-6xl font-bold mb-12">{$_('skills')}</h1>
         </ScrollReveal>
 
         <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
