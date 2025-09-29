@@ -34,7 +34,7 @@
             <h1 class="text-6xl font-bold mb-12">{$_('skills')}</h1>
         </ScrollReveal>
 
-        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
             {#each skills as skill, index}
                 {#if index > 0 && skill.category !== skills[index - 1].category}
                     <div class="col-span-full my"></div>
