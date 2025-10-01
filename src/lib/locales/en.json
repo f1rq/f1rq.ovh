@@ -10,5 +10,6 @@
 
   "skills": "My skills",
 
-  "lifemap1": "LifeMap is a personal life tracker that visually organizes important events, goals, and memories in a timeline and map format. It helps users reflect on their past, document key milestones, and plan for the future in a structured and interactive way."
+  "lifemap1": "A life events tracker app with map, timeline etc.",
+  "nexo_bot1": "My own personal bot for Discord, written in Python using the discord.py library."
 }
