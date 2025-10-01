@@ -52,7 +52,7 @@
                         </div>
                         <div class="flex gap-1">
                             {#each Array(5) as _, i}
-                                <div class="w-2 h-2 rounded-full {i < skill.dots ? 'bg-base-content' : 'bg-base-300'}"></div>
+                                <div class="w-2 h-2 rounded-full {i < skill.dots ? 'bg-base-content' : 'bg-[#3e4559]'}"></div>
                             {/each}
                         </div>
                     </div>
