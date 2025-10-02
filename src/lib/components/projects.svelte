@@ -28,8 +28,9 @@
 
 <div class="hero min-h-screen flex flex-col justify-center pt-24">
     <div class="w-full max-w-4xl mx-auto px-6">
+        <ScrollReveal duration={400} direction="up">
         <h1 class="text-6xl font-bold mb-12">Projects</h1>
-
+        </ScrollReveal>
         <div class="columns-1 sm:columns-2 lg:columns-2 gap-6 [column-fill:balance]">
             {#each projects as p, index}
                 <ScrollReveal duration={300} delay={index * 50} direction="up">
