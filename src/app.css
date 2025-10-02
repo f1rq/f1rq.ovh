@@ -4,8 +4,8 @@
 @source "../node_modules/flowbite-svelte/dist";
 
 :root {
-    --font-mono: 'Inconsolata', monospace;
-    --font-sans: 'Inconsolata', monospace;
+    --font-mono: 'Inconsolata Medium', monospace;
+    --font-sans: 'Inconsolata Medium', monospace;
 }
 
 html {
@@ -13,11 +13,11 @@ html {
 }
 
 body {
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Inconsolata Medium', monospace;
     letter-spacing: 0.025em;
     scroll-behavior: smooth;
 }
 
 * {
-    font-family: 'Inconsolata', monospace !important;
+    font-family: 'Inconsolata Medium', monospace !important;
 }
