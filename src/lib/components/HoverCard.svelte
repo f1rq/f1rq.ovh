@@ -15,7 +15,7 @@
 </script>
 
 <div
-        class="image-card relative overflow-hidden rounded-lg cursor-pointer group shadow-md"
+        class="image-card relative overflow-hidden rounded-lg cursor-pointer group shadow-primary-forhovercard"
         role="button"
         tabindex="0"
         on:mouseenter={() => isHovered = true}
