@@ -4,18 +4,30 @@
     import Hero from '$lib/components/hero.svelte';
     import Skills from '$lib/components/skills.svelte';
     import Projects from '$lib/components/projects.svelte'
+    import Contact from '$lib/components/contact.svelte'
+
+    import MouseGradient from '$lib/components/mouse-gradient.svelte'
 </script>
 
-<Navbar />
+<div class="relative">
+    <MouseGradient
+    />
 
-<div id="main">
-    <Hero />
-</div>
+    <Navbar />
 
-<div id="skills">
-    <Skills />
-</div>
+    <div id="main">
+        <Hero />
+    </div>
 
-<div id="projects">
-    <Projects />
+    <div id="skills">
+        <Skills />
+    </div>
+
+    <div id="projects">
+        <Projects />
+    </div>
+
+    <div id="contact">
+        <Contact />
+    </div>
 </div>
