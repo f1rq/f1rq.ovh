@@ -1,5 +1,5 @@
 {
-  "nav0": "Home",
+  "nav0": "About",
   "nav1": "Skills",
   "nav2": "Projects",
   "nav3": "Contact",
@@ -8,8 +8,12 @@
   "main2": "My current primary technologies are Kotlin and Svelte. In the future, I plan to learn Swift for developing iOS and macOS apps.",
   "main3": "I am also a high school student from Poland. In my free time, I enjoy coding, riding motorcycles, playing video games and playing electric guitar.",
 
-  "skills": "My skills",
+  "skills": "Skills",
 
   "lifemap1": "A life events tracker app with map, timeline etc.",
-  "nexo_bot1": "My own personal bot for Discord, written in Python using the discord.py library."
+  "nexo_bot1": "My own personal bot for Discord, written in Python using the discord.py library.",
+
+  "projects": "Projects",
+
+  "contact": "Get in touch"
 }

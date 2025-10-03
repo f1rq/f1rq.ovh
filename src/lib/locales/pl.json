@@ -1,5 +1,5 @@
 {
-  "nav0": "Stronа główna",
+  "nav0": "O mnie",
   "nav1": "Umiejętności",
   "nav2": "Projekty",
   "nav3": "Kontakt",
@@ -8,8 +8,12 @@
   "main2": "Obecnie głównie korzystam z Kotlin oraz Svelte. W przyszłości planuję nauczyć się także Swift do tworzenia aplikacji na systemy iOS i macOS.",
   "main3": "Jestem również uczniem technikum z Polski. W wolnym czasie lubię programować, jeździć motocyklem, grać w gry oraz grać na gitarze elektrycznej.",
 
-  "skills": "Moje umiejętności",
+  "skills": "Umiejętności",
 
   "lifemap1": "Aplikacja do śledzenia wydarzeń z życia z mapą, osią czasu itp.",
-  "nexo_bot1": "Mój własny bot na Discorda, napisany w Pythonie przy użyciu biblioteki discord.py."
+  "nexo_bot1": "Mój własny bot na Discorda, napisany w Pythonie przy użyciu biblioteki discord.py.",
+
+  "projects": "Projekty",
+
+  "contact": "Skontaktuj się"
 }
