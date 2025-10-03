@@ -45,7 +45,3 @@ body {
     box-shadow: none;
     transition: box-shadow 0.3s ease;
 }
-
-.shadow-primary-forhovercard:hover {
-    box-shadow: 0 0 16px rgba(170, 81, 255, 0.3);
-}
