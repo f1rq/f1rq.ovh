@@ -31,7 +31,7 @@
 <div class="min-h-screen p-8 flex items-center justify-center">
     <div class="w-full max-w-6xl">
         <ScrollReveal duration={400} delay={0}>
-            <h1 class="text-6xl font-bold mb-12">{$_('skills')}</h1>
+            <h1 class="text-6xl font-bold mb-12 text-primary">{$_('skills')}</h1>
         </ScrollReveal>
 
         <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
@@ -40,7 +40,7 @@
                     <div class="col-span-full my"></div>
                 {/if}
                 <ScrollReveal duration={300} delay={index * 50} direction="up">
-                    <div class="p-4 bg-base-200 border border-neutral/20 rounded-lg hover:shadow-lg hover:border-neutral/20 transition-all duration-200">
+                    <div class="p-4 backdrop-blur-md bg-base-100/60 rounded-lg transition-all duration-200 shadow-inner-primary">
                         <div class="flex items-center gap-3 mb-3">
                             <img src={skill.logo} alt={skill.name} class="w-8 h-8" />
                             <div class="flex-1">
@@ -52,7 +52,7 @@
                         </div>
                         <div class="flex gap-1">
                             {#each Array(5) as _, i}
-                                <div class="w-2 h-2 rounded-full {i < skill.dots ? 'bg-base-content' : 'bg-[#3e4559]'}"></div>
+                                <div class="w-2 h-2 rounded-full {i < skill.dots ? 'bg-primary' : 'bg-[#3e4559]'}"></div>
                             {/each}
                         </div>
                     </div>
