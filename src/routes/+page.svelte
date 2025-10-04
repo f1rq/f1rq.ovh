@@ -3,15 +3,16 @@
     import Navbar from '$lib/components/navbar.svelte';
     import Hero from '$lib/components/hero.svelte';
     import Skills from '$lib/components/skills.svelte';
-    import Projects from '$lib/components/projects.svelte'
-    import Contact from '$lib/components/contact.svelte'
+    import Projects from '$lib/components/projects.svelte';
+    import Contact from '$lib/components/contact.svelte';
+    import Footer from '$lib/components/footer.svelte';
 
     import MouseGradient from '$lib/components/mouse-gradient.svelte'
 </script>
 
 <div class="relative">
-    <MouseGradient
-    />
+<!--    <MouseGradient-->
+<!--    />-->
 
     <Navbar />
 
@@ -30,4 +31,6 @@
     <div id="contact">
         <Contact />
     </div>
+
+    <Footer />
 </div>
