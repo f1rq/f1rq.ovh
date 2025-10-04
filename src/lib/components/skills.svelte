@@ -11,14 +11,16 @@
     import gitLogo from '$lib/assets/skills/Git_Logo.svg?raw'
     import linuxLogo from '$lib/assets/skills/Linux_Logo.svg?raw'
     import csharpLogo from '$lib/assets/skills/CS_Logo.svg?raw'
+    import nodejsLogo from '$lib/assets/skills/Nodejs_Logo.svg?raw'
+    import phpLogo from '$lib/assets/skills/php_Logo.svg?raw'
 
     import ScrollReveal from './ScrollReveal.svelte'
 
     const skillCategories = {
         'Languages': [
             { name: 'Kotlin', logo: kotlinLogo, color: '#4e7ede', colorRgb: '78, 126, 222' },
-            { name: "C#", logo: csharpLogo, color: '#68217a', colorRgb: '104, 33, 122' },
             { name: 'Python', logo: pythonLogo, color: '#fdd644', colorRgb: '254, 215, 69' },
+            { name: "C#", logo: csharpLogo, color: '#68217a', colorRgb: '104, 33, 122' },
         ],
         'Frameworks': [
             { name: 'Svelte', logo: svelteLogo, color: '#ff3e00', colorRgb: '255, 62, 0' },
@@ -28,28 +30,32 @@
         'Tools': [
             { name: 'Git', logo: gitLogo, color: '#f05032', colorRgb: '240, 80, 50' },
             { name: 'Linux', logo: linuxLogo, color: '#fcc624', colorRgb: '252, 198, 36' },
+            { name: 'Node.js', logo: nodejsLogo, color: '#5fa04e', colorRgb: '95, 160, 78' },
         ],
         'Others': [
             { name: 'Arduino', logo: arduinoLogo, color: '#00979d', colorRgb: '0, 151, 157' },
             { name: 'JavaScript', logo: jsLogo, color: '#f7df1e', colorRgb: '247, 223, 30' },
+            { name: 'php', logo: phpLogo, color: '#777bb3', colorRgb: '119, 123, 179'}
         ],
     };
 </script>
 
-<div class="min-h-screen p-8 flex items-center justify-center">
+<div class="min-h-screen py-24 px-4 md:p-0 flex items-center justify-center bg-base-200 relative" style="clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);">
     <div class="w-full max-w-4xl">
         <ScrollReveal duration={400} delay={0}>
-            <h1 class="text-6xl font-bold mb-12 text-primary">{$_('skills')}</h1>
+            <h1 class="text-5xl font-bold mb-2 text-primary">{$_('skills')}</h1>
+            <div class="w-52 h-1 bg-primary rounded-full mb-12"></div>
         </ScrollReveal>
 
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
             {#each Object.entries(skillCategories) as [category, skills], catIndex}
                 <div>
-                    <h2 class="text-3xl font-semibold mb-6 text-base-content/80">{category}</h2>
-                    <div class="flex flex-row flex-wrap gap-6">
+                    <ScrollReveal duration={400} direction="up">
+                        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-base-content/80 text-left">{category}</h2>                    </ScrollReveal>
+                    <div class="flex flex-row flex-wrap gap-6 justify-center sm:justify-start">
                         {#each skills as skill, index}
-                            <ScrollReveal duration={300} delay={index * 30} direction="up">
-                                <div class="aspect-square w-22 h-22 backdrop-blur-md bg-base-100/60 rounded-xl transition-all duration-150 flex items-center justify-center skill-container"
+                            <ScrollReveal duration={300} direction="up">
+                                <div class="aspect-square w-16 h-16 sm:w-22 sm:h-22 backdrop-blur-md bg-base-100/60 rounded-xl transition-all duration-150 flex items-center justify-center skill-container"
                                      style="--skill-color: {skill.colorRgb || '170, 81, 255'}; --icon-color: {skill.color || '#aa51ff'};">
                                     <div class="skill-icon">
                                         {@html skill.logo}
@@ -107,10 +113,19 @@
     }
 
     .skill-icon :global(svg) {
-        width: 3rem;
-        height: 3rem;
-        max-width: 3rem;
-        max-height: 3rem;
+        width: 2rem;
+        height: 2rem;
+        max-width: 2rem;
+        max-height: 2rem;
+    }
+
+    @media (min-width: 640px) {
+        .skill-icon :global(svg) {
+            width: 3rem;
+            height: 3rem;
+            max-width: 3rem;
+            max-height: 3rem;
+        }
     }
 
     .skill-icon :global(svg path),
