@@ -5,13 +5,13 @@
 @plugin "daisyui/theme" {
     name: black;
     default: true;
-    --color-primary: #aa51ff;
+    --color-primary: #b76eff;
     --color-primary-content: #ffffff;
 }
 
 @plugin "daisyui/theme" {
     name: wireframe;
-    --color-primary: #aa51ff;
+    --color-primary: #b76eff;
     --color-primary-content: #000000;
 }
 
