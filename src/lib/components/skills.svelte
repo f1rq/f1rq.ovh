@@ -45,7 +45,7 @@
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
             {#each Object.entries(skillCategories) as [category, skills], catIndex}
                 <div>
-                    <h2 class="text-3xl font-semibold mb-6 text-secondary">{category}</h2>
+                    <h2 class="text-3xl font-semibold mb-6 text-base-content/80">{category}</h2>
                     <div class="flex flex-row flex-wrap gap-6">
                         {#each skills as skill, index}
                             <ScrollReveal duration={300} delay={index * 30} direction="up">
