@@ -29,6 +29,7 @@
 		}
 	},
 	"dependencies": {
+		"@sveltejs/adapter-static": "^3.0.10",
 		"svelte-i18n": "^4.0.1"
 	}
 }
