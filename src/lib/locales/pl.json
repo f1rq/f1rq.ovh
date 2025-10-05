@@ -15,9 +15,13 @@
   "cat_others": "Inne",
 
   "lifemap1": "Aplikacja do śledzenia wydarzeń z życia z mapą, osią czasu itp.",
+  "lifemap2": "LifeMap to aplikacja do śledzenia wydarzeń życiowych, odwiedzonych miejsc i innych wspomnień. Oferuje widok mapy, listę, oś czasu oraz inne funkcje pomagające dokumentować swoje życie.",
   "nexo_bot1": "Mój własny bot na Discorda, napisany w Pythonie przy użyciu biblioteki discord.py.",
+  "nexo_bot2": "Bot Discord napisany w Pythonie przy użyciu biblioteki discord.py. Zaprojektowany dla mojego serwera Discord, zawiera narzędzia moderacyjne, funkcje rozrywkowe i więcej. Projekt jest wciąż rozwijany z ciągłymi dodatkami i ulepszeniami.",
 
   "projects": "Projekty",
+  "project_about": "O projekcie",
+  "project_tech": "Technologie",
 
   "contact": "Kontakt",
   "contact1": "Przyjmę zlecenia lub po prostu porozmawiajmy!"

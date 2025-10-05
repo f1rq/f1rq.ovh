@@ -15,9 +15,13 @@
   "cat_others": "Others",
 
   "lifemap1": "A life events tracker app with map, timeline etc.",
+  "lifemap2": "LifeMap is an app for tracking life events, places you've been to, and more. It features a map view, list view, timeline and other functionalities to help you document and reflect on your life.",
   "nexo_bot1": "My own personal bot for Discord, written in Python using the discord.py library.",
+  "nexo_bot2": "A Discord bot written in Python using the discord.py library. Designed for my Discord server, it includes moderation tools, entertainment features, and more. The project is still under development with continuous feature additions and improvements.",
 
   "projects": "Projects",
+  "project_about": "About",
+  "project_tech": "Technologies",
 
   "contact": "Contact",
   "contact1": "Available for work or just to chat!"
