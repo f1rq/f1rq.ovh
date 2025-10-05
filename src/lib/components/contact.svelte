@@ -39,11 +39,13 @@
     <div class="hero-content flex-col items-center w-full max-w-xl px-6">
         <ScrollReveal duration={400} direction="up">
             <h1 class="text-5xl font-bold text-primary self-start">{$_('contact')}</h1>
+        </ScrollReveal>
+        <ScrollReveal duration={400} direction="up">
             <p class="text-base-content self-start ml-1">{$_('contact1')}</p>
         </ScrollReveal>
         <div class="grid gap-4 md:grid-cols-2 w-full">
             {#each contacts as contact, index}
-                <ScrollReveal duration={300} delay={index * 50} direction="up">
+                <ScrollReveal duration={300} direction="up">
                     <a href="{contact.href}" class="flex items-center gap-4 w-full rounded-lg p-2 hover:bg-primary/20" target="_blank">
                         <div class="h-12 w-12 bg-primary/25 flex items-center justify-center rounded-lg flex-shrink-0">
                             <div class="h-8 w-8 fill-primary">
