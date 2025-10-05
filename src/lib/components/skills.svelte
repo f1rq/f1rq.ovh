@@ -40,7 +40,7 @@
     };
 </script>
 
-<div class="min-h-screen py-24 px-4 md:p-0 flex items-center justify-center bg-base-200 relative" style="clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);">
+<div class="min-h-screen py-24 px-4 md:p-0 flex items-center justify-center bg-base-200 relative skills-section">
     <div class="w-full max-w-4xl">
         <ScrollReveal duration={400} delay={0}>
             <h1 class="text-5xl font-bold mb-2 text-primary">{$_('skills')}</h1>
@@ -51,11 +51,12 @@
             {#each Object.entries(skillCategories) as [category, skills], catIndex}
                 <div>
                     <ScrollReveal duration={400} direction="up">
-                        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-base-content/80 text-left">{$_(category)}</h2>                    </ScrollReveal>
+                        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-base-content/80 text-left">{$_(category)}</h2>
+                    </ScrollReveal>
                     <div class="flex flex-row flex-wrap gap-6 justify-center sm:justify-start">
                         {#each skills as skill, index}
                             <ScrollReveal duration={300} direction="up">
-                                <div class="aspect-square w-16 h-16 sm:w-22 sm:h-22 backdrop-blur-md bg-base-100/60 rounded-xl transition-all duration-150 flex items-center justify-center skill-container"
+                                <div class="aspect-square w-16 h-16 sm:w-22 sm:h-22 backdrop-blur-md bg-base-100/60 rounded-xl skill-container"
                                      style="--skill-color: {skill.colorRgb || '170, 81, 255'}; --icon-color: {skill.color || '#aa51ff'};">
                                     <div class="skill-icon">
                                         {@html skill.logo}
@@ -71,21 +72,29 @@
 </div>
 
 <style>
+    .skills-section {
+        clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+        will-change: transform;
+    }
+
     .skill-container {
-        box-shadow: inset 0 2px 6px rgba(var(--skill-color), 0.15),
-        inset 0 -2px 6px rgba(var(--skill-color), 0.15),
-        inset 2px 0 6px rgba(var(--skill-color), 0.1),
-        inset -2px 0 6px rgba(var(--skill-color), 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(var(--skill-color), 0.2);
+        transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+        will-change: transform, box-shadow;
+        contain: layout style paint;
     }
 
     .skill-container:hover {
-        box-shadow: inset 0 2px 6px rgba(var(--skill-color), 0.15),
-        inset 0 -2px 6px rgba(var(--skill-color), 0.15),
-        inset 2px 0 6px rgba(var(--skill-color), 0.1),
-        inset -2px 0 6px rgba(var(--skill-color), 0.1),
-        0 0 20px rgba(var(--skill-color), 0.4),
-        0 0 40px rgba(var(--skill-color), 0.2);
         transform: translateY(-2px);
+        box-shadow: 0 0 20px rgba(var(--skill-color), 0.3),
+        0 0 40px rgba(var(--skill-color), 0.15);
+    }
+
+    .skill-icon {
+        will-change: auto;
     }
 
     .skill-icon :global(svg) {
@@ -93,6 +102,7 @@
         height: 2rem;
         max-width: 2rem;
         max-height: 2rem;
+        display: block;
     }
 
     @media (min-width: 640px) {
