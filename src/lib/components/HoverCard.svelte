@@ -45,7 +45,7 @@
         <h3 class="text-3xl font-extrabold mb-2">{title}</h3>
         <p class="text-sm opacity-90 mb-2">{description}</p>
         {#each tags as tag, index}
-            <span class="bg-[#1D232A] px-3 py-2 tag rounded-full text-[#FAF7F5] text-xs">{tag}</span>
+            <span class="bg-primary/50 px-3 py-2 tag rounded-full text-base-content text-xs">{tag}</span>
         {/each}
     </div>
 </div>
