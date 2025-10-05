@@ -17,22 +17,22 @@
     import ScrollReveal from './ScrollReveal.svelte'
 
     const skillCategories = {
-        'Languages': [
+        cat_lang: [
             { name: 'Kotlin', logo: kotlinLogo, color: '#4e7ede', colorRgb: '78, 126, 222' },
             { name: 'Python', logo: pythonLogo, color: '#fdd644', colorRgb: '254, 215, 69' },
             { name: "C#", logo: csharpLogo, color: '#68217a', colorRgb: '104, 33, 122' },
         ],
-        'Frameworks': [
+        cat_framework: [
             { name: 'Svelte', logo: svelteLogo, color: '#ff3e00', colorRgb: '255, 62, 0' },
             { name: 'Jetpack Compose', logo: jetpackLogo, color: '#4285f4', colorRgb: '66, 133, 244' },
             { name: 'Tailwind CSS', logo: tailwindLogo, color: '#06b6d4', colorRgb: '6, 182, 212' },
         ],
-        'Tools': [
+        cat_tools: [
             { name: 'Git', logo: gitLogo, color: '#f05032', colorRgb: '240, 80, 50' },
             { name: 'Linux', logo: linuxLogo, color: '#fcc624', colorRgb: '252, 198, 36' },
             { name: 'Node.js', logo: nodejsLogo, color: '#5fa04e', colorRgb: '95, 160, 78' },
         ],
-        'Others': [
+        cat_others: [
             { name: 'Arduino', logo: arduinoLogo, color: '#00979d', colorRgb: '0, 151, 157' },
             { name: 'JavaScript', logo: jsLogo, color: '#f7df1e', colorRgb: '247, 223, 30' },
             { name: 'php', logo: phpLogo, color: '#777bb3', colorRgb: '119, 123, 179'}
@@ -51,7 +51,7 @@
             {#each Object.entries(skillCategories) as [category, skills], catIndex}
                 <div>
                     <ScrollReveal duration={400} direction="up">
-                        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-base-content/80 text-left">{category}</h2>                    </ScrollReveal>
+                        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-base-content/80 text-left">{$_(category)}</h2>                    </ScrollReveal>
                     <div class="flex flex-row flex-wrap gap-6 justify-center sm:justify-start">
                         {#each skills as skill, index}
                             <ScrollReveal duration={300} direction="up">
@@ -69,31 +69,7 @@
         </div>
     </div>
 </div>
-<!--<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-      {#each skills as skill, index}
-          {#if index > 0 && skill.category !== skills[index - 1].category}
-              <div class="col-span-full my"></div>
-          {/if}
-          <ScrollReveal duration={300} delay={index * 50} direction="up">
-              <div class="p-4 backdrop-blur-md bg-base-100/60 rounded-lg transition-all duration-200 shadow-inner-primary">
-                  <div class="flex items-center gap-3 mb-3">
-                      <img src={skill.logo} alt={skill.name} class="w-8 h-8" />
-                      <div class="flex-1">
-                          <h3 class="font-semibold text-lg">{skill.name}</h3>
-                          <div class="flex items-center gap-2 text-sm text-base-content/70">
-                              <span>{currentYear - skill.startYear}y</span>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="flex gap-1">
-                      {#each Array(5) as _, i}
-                          <div class="w-2 h-2 rounded-full {i < skill.dots ? 'bg-primary' : 'bg-[#3e4559]'}"></div>
-                      {/each}
-                  </div>
-              </div>
-          </ScrollReveal>
-      {/each}
-  </div>-->
+
 <style>
     .skill-container {
         box-shadow: inset 0 2px 6px rgba(var(--skill-color), 0.15),
