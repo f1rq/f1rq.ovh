@@ -16,28 +16,30 @@
 
     import ScrollReveal from './ScrollReveal.svelte'
 
-    const skillCategories = {
-        cat_lang: [
-            { name: 'Kotlin', logo: kotlinLogo, color: '#4e7ede', colorRgb: '78, 126, 222' },
-            { name: 'Python', logo: pythonLogo, color: '#fdd644', colorRgb: '254, 215, 69' },
-            { name: "C#", logo: csharpLogo, color: '#68217a', colorRgb: '104, 33, 122' },
-        ],
-        cat_framework: [
-            { name: 'Svelte', logo: svelteLogo, color: '#ff3e00', colorRgb: '255, 62, 0' },
-            { name: 'Jetpack Compose', logo: jetpackLogo, color: '#4285f4', colorRgb: '66, 133, 244' },
-            { name: 'Tailwind CSS', logo: tailwindLogo, color: '#06b6d4', colorRgb: '6, 182, 212' },
-        ],
-        cat_tools: [
-            { name: 'Git', logo: gitLogo, color: '#f05032', colorRgb: '240, 80, 50' },
-            { name: 'Linux', logo: linuxLogo, color: '#fcc624', colorRgb: '252, 198, 36' },
-            { name: 'Node.js', logo: nodejsLogo, color: '#5fa04e', colorRgb: '95, 160, 78' },
-        ],
-        cat_others: [
-            { name: 'Arduino', logo: arduinoLogo, color: '#00979d', colorRgb: '0, 151, 157' },
-            { name: 'JavaScript', logo: jsLogo, color: '#f7df1e', colorRgb: '247, 223, 30' },
-            { name: 'php', logo: phpLogo, color: '#777bb3', colorRgb: '119, 123, 179'}
-        ],
-    };
+    const skillCategories = Object.freeze({
+        cat_lang: Object.freeze([
+            Object.freeze({ name: 'Kotlin', logo: kotlinLogo, color: '#4e7ede', colorRgb: '78, 126, 222' }),
+            Object.freeze({ name: 'Python', logo: pythonLogo, color: '#fdd644', colorRgb: '254, 215, 69' }),
+            Object.freeze({ name: "C#", logo: csharpLogo, color: '#68217a', colorRgb: '104, 33, 122' }),
+        ]),
+        cat_framework: Object.freeze([
+            Object.freeze({ name: 'Svelte', logo: svelteLogo, color: '#ff3e00', colorRgb: '255, 62, 0' }),
+            Object.freeze({ name: 'Jetpack Compose', logo: jetpackLogo, color: '#4285f4', colorRgb: '66, 133, 244' }),
+            Object.freeze({ name: 'Tailwind CSS', logo: tailwindLogo, color: '#06b6d4', colorRgb: '6, 182, 212' }),
+        ]),
+        cat_tools: Object.freeze([
+            Object.freeze({ name: 'Git', logo: gitLogo, color: '#f05032', colorRgb: '240, 80, 50' }),
+            Object.freeze({ name: 'Linux', logo: linuxLogo, color: '#fcc624', colorRgb: '252, 198, 36' }),
+            Object.freeze({ name: 'Node.js', logo: nodejsLogo, color: '#5fa04e', colorRgb: '95, 160, 78' }),
+        ]),
+        cat_others: Object.freeze([
+            Object.freeze({ name: 'Arduino', logo: arduinoLogo, color: '#00979d', colorRgb: '0, 151, 157' }),
+            Object.freeze({ name: 'JavaScript', logo: jsLogo, color: '#f7df1e', colorRgb: '247, 223, 30' }),
+            Object.freeze({ name: 'php', logo: phpLogo, color: '#777bb3', colorRgb: '119, 123, 179'}),
+        ]),
+    });
+
+    const categoryEntries = Object.entries(skillCategories);
 </script>
 
 <div class="min-h-screen py-24 px-4 md:p-0 flex items-center justify-center bg-base-200 relative skills-section">
@@ -48,16 +50,16 @@
         </ScrollReveal>
 
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
-            {#each Object.entries(skillCategories) as [category, skills], catIndex}
+            {#each categoryEntries as [category, skills] (category)}
                 <div>
                     <ScrollReveal duration={400} direction="up">
                         <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-base-content/80 text-left">{$_(category)}</h2>
                     </ScrollReveal>
                     <div class="flex flex-row flex-wrap gap-6 justify-center sm:justify-start">
-                        {#each skills as skill, index}
+                        {#each skills as skill (skill.name)}
                             <ScrollReveal duration={300} direction="up">
                                 <div class="aspect-square w-16 h-16 sm:w-22 sm:h-22 backdrop-blur-md bg-base-100/60 rounded-xl skill-container"
-                                     style="--skill-color: {skill.colorRgb || '170, 81, 255'}; --icon-color: {skill.color || '#aa51ff'};">
+                                     style="--skill-color: {skill.colorRgb}; --icon-color: {skill.color};">
                                     <div class="skill-icon">
                                         {@html skill.logo}
                                     </div>
@@ -74,7 +76,6 @@
 <style>
     .skills-section {
         clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
-        will-change: transform;
     }
 
     .skill-container {
@@ -83,18 +84,14 @@
         justify-content: center;
         border: 1px solid rgba(var(--skill-color), 0.2);
         transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
-        will-change: transform, box-shadow;
-        contain: layout style paint;
+        transform: translateZ(0); /* Force hardware acceleration */
+        backface-visibility: hidden;
     }
 
     .skill-container:hover {
-        transform: translateY(-2px);
+        transform: translate3d(0, -2px, 0);
         box-shadow: 0 0 20px rgba(var(--skill-color), 0.3),
         0 0 40px rgba(var(--skill-color), 0.15);
-    }
-
-    .skill-icon {
-        will-change: auto;
     }
 
     .skill-icon :global(svg) {
@@ -118,6 +115,6 @@
     .skill-icon :global(svg circle),
     .skill-icon :global(svg rect),
     .skill-icon :global(svg polygon) {
-        fill: var(--icon-color, #aa51ff);
+        fill: var(--icon-color);
     }
 </style>
