@@ -9,6 +9,7 @@
     --color-primary-content: #ffffff;
     --color-base-100: #070707;
     --color-base-200: #151515 ;
+    --color-base-300: #262626;
 }
 
 @plugin "daisyui/theme" {
