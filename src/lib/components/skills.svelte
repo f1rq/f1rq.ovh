@@ -1,7 +1,7 @@
 <script>
     import { _, locale } from 'svelte-i18n'
 
-    import jsLogo from '$lib/assets/skills/Javascript_Logo.svg?raw'
+    import tsLogo from '$lib/assets/skills/TS_Logo.svg?raw'
     import svelteLogo from '$lib/assets/skills/Svelte_Logo.svg?raw'
     import tailwindLogo from '$lib/assets/skills/Tailwind_Logo.svg?raw'
     import kotlinLogo from '$lib/assets/skills/Kotlin_Logo.svg?raw'
@@ -21,6 +21,7 @@
             Object.freeze({ name: 'Kotlin', logo: kotlinLogo, color: '#4e7ede', colorRgb: '78, 126, 222' }),
             Object.freeze({ name: 'Python', logo: pythonLogo, color: '#fdd644', colorRgb: '254, 215, 69' }),
             Object.freeze({ name: "C#", logo: csharpLogo, color: '#68217a', colorRgb: '104, 33, 122' }),
+            Object.freeze({ name: 'TypeScript', logo: tsLogo, color: '#007acc', colorRgb: '0, 122, 204' }),
         ]),
         cat_framework: Object.freeze([
             Object.freeze({ name: 'Svelte', logo: svelteLogo, color: '#ff3e00', colorRgb: '255, 62, 0' }),
@@ -34,7 +35,6 @@
         ]),
         cat_others: Object.freeze([
             Object.freeze({ name: 'Arduino', logo: arduinoLogo, color: '#00979d', colorRgb: '0, 151, 157' }),
-            Object.freeze({ name: 'JavaScript', logo: jsLogo, color: '#f7df1e', colorRgb: '247, 223, 30' }),
             Object.freeze({ name: 'php', logo: phpLogo, color: '#777bb3', colorRgb: '119, 123, 179'}),
         ]),
     });
@@ -43,7 +43,7 @@
 </script>
 
 <div class="min-h-screen py-24 px-4 md:p-0 flex items-center justify-center bg-base-200 relative skills-section">
-    <div class="w-full max-w-4xl">
+    <div class="w-full max-w-5xl">
         <ScrollReveal duration={400} delay={0}>
             <h1 class="text-5xl font-bold mb-2 text-primary">{$_('skills')}</h1>
             <div class="w-52 h-1 bg-primary rounded-full mb-12"></div>
