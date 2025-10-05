@@ -9,6 +9,10 @@
   "main3": "I am also a high school student from Poland. In my free time, I enjoy coding, riding motorcycles, playing video games and playing electric guitar.",
 
   "skills": "Skills",
+  "cat_lang": "Languages",
+  "cat_framework": "Frameworks",
+  "cat_tools": "Tools",
+  "cat_others": "Others",
 
   "lifemap1": "A life events tracker app with map, timeline etc.",
   "nexo_bot1": "My own personal bot for Discord, written in Python using the discord.py library.",

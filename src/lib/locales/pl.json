@@ -9,6 +9,10 @@
   "main3": "Jestem również uczniem technikum z Polski. W wolnym czasie lubię programować, jeździć motocyklem, grać w gry oraz grać na gitarze elektrycznej.",
 
   "skills": "Umiejętności",
+  "cat_lang": "Języki",
+  "cat_framework": "Frameworki",
+  "cat_tools": "Narzędzia",
+  "cat_others": "Inne",
 
   "lifemap1": "Aplikacja do śledzenia wydarzeń z życia z mapą, osią czasu itp.",
   "nexo_bot1": "Mój własny bot na Discorda, napisany w Pythonie przy użyciu biblioteki discord.py.",
